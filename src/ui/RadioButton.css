@@ -1,0 +1,34 @@
+/* Style for the radio buttons */
+.radio-group {
+  margin-bottom: 10px; /* Adjust spacing between group label and options */
+  border: 1px solid #ccc; /* Add a border around the fieldset */
+  padding: 10px; /* Add padding for the fieldset */
+}
+
+.group-label {
+  font-weight: bold;
+  margin-bottom: 5px; /* Adjust spacing below the group label */
+  /* Add more styles as needed */
+}
+
+input[type="radio"] {
+  margin-right: 5px; /* Adjust spacing between radio button and text */
+}
+
+/* Styling for the labels */
+label {
+  display: block;
+  margin-bottom: 8px; /* Adjust vertical spacing between labels */
+  font-family: Arial, sans-serif; /* Change font if needed */
+  color: #333; /* Change text color */
+}
+
+/* Styling for checked radio buttons */
+input[type="radio"]:checked + label {
+  font-weight: bold; /* Example: Bold text for checked option */
+}
+
+/* Styling for unchecked radio buttons */
+input[type="radio"]:not(:checked) + label {
+  font-weight: normal; /* Example: Normal text for unchecked option */
+}

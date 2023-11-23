@@ -1,4 +1,5 @@
 import Dropdown from "../ui/Dropdown";
+import YesNoRadio from "../ui/RadioButton";
 import React, { useState } from "react";
 
 function FontSizeSection() {
@@ -18,14 +19,29 @@ function FontSizeSection() {
   ];
 
   const [selectedOption, setSelectedOption] = useState("");
+  const [selectedValue, setSelectedValue] = useState("");
 
   const handleDropdownChange = (value) => {
     setSelectedOption(value); // Update the selected value in the state
   };
 
+  const handleAction = (value) => {
+    setSelectedValue(value);
+  };
+
   const renderNextStep = (value) => {
     switch (value) {
       case "html":
+        return (
+          <>
+            <YesNoRadio
+              initialValue={"Yes"}
+              onChange={handleAction}
+              groupLabel="Choose Option:"
+            />
+            {selectedValue && <p>{selectedValue}</p>}
+          </>
+        );
         break;
       case "body":
         break;
