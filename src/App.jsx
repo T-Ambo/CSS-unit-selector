@@ -8,7 +8,7 @@ function App() {
   const [showFlow, setShowFlow] = useState(false);
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       {!showFlow ? (
         <>
           <InfoText />
@@ -22,13 +22,15 @@ function App() {
       ) : (
         <>
           <HeaderText />
-          <Form />
-          <button
-            onClick={() => setShowFlow(false)}
-            style={{ marginTop: "1rem" }}
-          >
-            Restart
-          </button>
+          <div className="left-side">
+            <Form />
+            <button
+              onClick={() => setShowFlow(false)}
+              style={{ marginTop: "1rem" }}
+            >
+              Restart
+            </button>
+          </div>
         </>
       )}
     </div>
