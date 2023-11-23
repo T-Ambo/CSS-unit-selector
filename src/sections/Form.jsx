@@ -54,7 +54,7 @@ function Form() {
     <>
       <Dropdown
         options={options}
-        label="Choose an option"
+        label="What are you declaring?"
         onChange={handleDropdownChange}
       />
       {selectedOption && renderNextStep(selectedOption)}

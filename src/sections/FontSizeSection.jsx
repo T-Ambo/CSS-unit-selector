@@ -1,6 +1,8 @@
 import Dropdown from "../ui/Dropdown";
 import YesNoRadio from "../ui/RadioButton";
 import React, { useState } from "react";
+import data from "../finalAnswers.json";
+import AnswerText from "./AnswerText";
 
 function FontSizeSection() {
   const options = [
@@ -32,14 +34,24 @@ function FontSizeSection() {
   const renderNextStep = (value) => {
     switch (value) {
       case "html":
+        const text = data.answers.find(
+          (item) => item.key === "No I guess not"
+        ).text;
+        console.log(selectedValue && selectedValue === "no");
         return (
           <>
             <YesNoRadio
               initialValue={"Yes"}
               onChange={handleAction}
-              groupLabel="Choose Option:"
+              groupLabel="Do you need to set a font-size here?"
             />
-            {selectedValue && <p>{selectedValue}</p>}
+            {selectedValue && (
+              <>
+                {selectedValue && selectedValue === "no" ? (
+                  <AnswerText text={text} />
+                ) : null}
+              </>
+            )}
           </>
         );
         break;
@@ -60,7 +72,7 @@ function FontSizeSection() {
     <>
       <Dropdown
         options={options}
-        label="Choose an option"
+        label="Which of these are you selecting to declare the font-size?"
         onChange={handleDropdownChange}
       />
       {selectedOption && renderNextStep(selectedOption)}
