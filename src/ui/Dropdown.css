@@ -1,0 +1,39 @@
+/* Dropdown container */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Label style */
+.dropdown-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  align-self: flex-start; /* Align label to the left */
+}
+
+/* Select box style */
+.dropdown-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  width: 200px; /* Adjust as needed */
+}
+
+/* Style for options when the select is open */
+.dropdown-select:focus {
+  border-color: #007bff;
+}
+
+/* Style for options within the dropdown */
+.dropdown-select option {
+  padding: 12px; /* Increased padding */
+  font-size: 18px; /* Larger font size */
+}
+
+/* Hide the placeholder option */
+.dropdown-select option[value=""][disabled] {
+  display: none;
+}
